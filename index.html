@@ -26,14 +26,15 @@
     <div class="glow-bg"></div>
     <div class="glow-bg-2"></div>
 
-    <!-- Navigation -->
+ <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md bg-darkBg/80 border-b border-white/5">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- Brand Logo -->
             <a href="#home" class="text-xl font-bold tracking-wider text-white">
                 <span class="text-gradient">Bryxenn</span>
             </a>
             
-            <!-- Desktop Menu -->
+            <!-- Desktop Menu (Aligned Right) -->
             <div class="hidden md:flex space-x-8 items-center text-sm font-medium text-gray-300">
                 <a href="#about" class="hover:text-white transition-colors duration-200">About</a>
                 <a href="#skills" class="hover:text-white transition-colors duration-200">Skills</a>
@@ -41,15 +42,22 @@
                 <a href="#contact" class="px-5 py-2 rounded-full border-gradient text-white transition-all duration-300">Contact</a>
             </div>
 
-            <!-- Mobile Menu Button (Visual only for this static demo, requires JS for toggle in full app) -->
-            <button class="md:hidden text-gray-300 hover:text-white">
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-300 hover:text-white focus:outline-none">
                 <span class="material-symbols-outlined text-3xl">menu</span>
             </button>
         </div>
-    </nav>
 
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-darkBg/95 backdrop-blur-md border-b border-white/5 py-6 px-6 flex flex-col space-y-4 text-center shadow-xl">
+            <a href="#about" class="mobile-link text-gray-300 hover:text-white transition-colors duration-200 py-2">About</a>
+            <a href="#skills" class="mobile-link text-gray-300 hover:text-white transition-colors duration-200 py-2">Skills</a>
+            <a href="#projects" class="mobile-link text-gray-300 hover:text-white transition-colors duration-200 py-2">Projects</a>
+            <a href="#contact" class="mobile-link px-5 py-2 rounded-full border-gradient text-white transition-all duration-300 inline-block mx-auto">Contact</a>
+        </div>
+    </nav>
     <!-- Main Content -->
-    <main class="pt-24 pb-16">
+    <main class="pt-24 pb-0">
         
         <!-- Hero Section -->
         <section id="home" class="min-h-[85vh] flex items-center justify-center px-6 relative">
@@ -79,224 +87,231 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-24 px-6 relative">
-            <div class="max-w-6xl mx-auto">
-                <div class="flex items-center gap-4 mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold">About <span class="text-gradient">Me</span></h2>
-                    <div class="h-[1px] flex-grow bg-gradient-to-r from-purple-500/50 to-transparent"></div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="space-y-6 text-gray-300 text-lg leading-relaxed">
-                        <p>
-                            Hello! I am a passionate developer currently pursuing a degree in <strong class="text-white">Information Systems</strong> at <strong class="text-white">Universitas Internasional Batam</strong>.
-                        </p>
-                        <p>
-                            Based in the vibrant city of <strong class="text-white">Batam, Indonesia</strong>, I specialize in bridging the gap between functional backend logic and engaging user interfaces. My dual focus on Full-Stack Development and QA Automation ensures that the software I build is not only feature-rich but also reliable and rigorously tested.
-                        </p>
-                        <div class="bg-surface p-6 rounded-2xl border border-white/5 mt-6">
-                            <h3 class="text-white font-semibold mb-4 flex items-center gap-2">
-                                <span class="material-symbols-outlined text-purple-400">interests</span>
-                                When I'm not coding
-                            </h3>
-                            <p class="text-sm text-gray-400 mb-4">You can usually find me engaging in my creative hobbies:</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="flex items-center gap-2 bg-darkBg px-4 py-2 rounded-lg border border-white/5 text-sm">
-                                    <span class="material-symbols-outlined text-blue-400 text-sm">music_note</span> Playing Guitar
-                                </span>
-                                <span class="flex items-center gap-2 bg-darkBg px-4 py-2 rounded-lg border border-white/5 text-sm">
-                                    <span class="material-symbols-outlined text-blue-400 text-sm">queue_music</span> Playing Drums
-                                </span>
-                                <span class="flex items-center gap-2 bg-darkBg px-4 py-2 rounded-lg border border-white/5 text-sm">
-                                    <span class="material-symbols-outlined text-purple-400 text-sm">photo_camera</span> Macro Photography
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Decorative Visual for About Section -->
-                    <div class="relative hidden lg:flex justify-center items-center">
-                        <div class="absolute inset-0 bg-primary-gradient opacity-20 blur-[100px] rounded-full"></div>
-                        <div class="relative w-full max-w-md aspect-square bg-surface border border-white/10 rounded-3xl p-8 flex flex-col justify-center gap-6 shadow-2xl transform rotate-3">
-                            <div class="flex items-center gap-4 text-gray-300">
-                                <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
-                                    <span class="material-symbols-outlined">school</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-medium">Education</h4>
-                                    <p class="text-sm">Universitas Internasional Batam</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4 text-gray-300">
-                                <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400">
-                                    <span class="material-symbols-outlined">location_on</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-medium">Location</h4>
-                                    <p class="text-sm">Batam, Riau Islands, Indonesia</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-4 text-gray-300">
-                                <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
-                                    <span class="material-symbols-outlined">bug_report</span>
-                                </div>
-                                <div>
-                                    <h4 class="text-white font-medium">Specialty</h4>
-                                    <p class="text-sm">Development & QA Automation</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <section id="about" class="py-24 px-6 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center gap-4 mb-12 reveal-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold">About <span class="text-gradient">Me</span></h2>
+                <div class="h-[1px] flex-grow bg-gradient-to-r from-purple-500/50 to-transparent"></div>
             </div>
-        </section>
 
-        <!-- Skills Section -->
-        <section id="skills" class="py-24 px-6 bg-surface/30">
-            <div class="max-w-6xl mx-auto">
-                <div class="flex items-center gap-4 mb-16 justify-end">
-                    <div class="h-[1px] flex-grow bg-gradient-to-l from-blue-500/50 to-transparent"></div>
-                    <h2 class="text-3xl md:text-4xl font-bold">Technical <span class="text-gradient">Skills</span></h2>
-                </div>
-
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                    <!-- Skill Item -->
-                    <div class="bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-blue-500/50 transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-blue-400 transition-colors">php</span>
-                        <span class="font-medium text-gray-200">PHP</span>
-                    </div>
-                    <div class="bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-red-500/50 transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-red-500 transition-colors">code</span>
-                        <span class="font-medium text-gray-200">Laravel</span>
-                    </div>
-                    <div class="bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-purple-500/50 transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-purple-500 transition-colors">css</span>
-                        <span class="font-medium text-gray-200">Bootstrap</span>
-                    </div>
-                    <div class="bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-yellow-400/50 transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-yellow-400 transition-colors">terminal</span>
-                        <span class="font-medium text-gray-200">Python</span>
-                    </div>
-                    <div class="bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-green-400/50 transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-green-400 transition-colors">precision_manufacturing</span>
-                        <span class="font-medium text-gray-200 text-center">Selenium WebDriver</span>
-                    </div>
-                    <div class="bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-teal-400/50 transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-teal-400 transition-colors">science</span>
-                        <span class="font-medium text-gray-200">PyTest</span>
-                    </div>
-                    <div class="bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-blue-600/50 transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-blue-600 transition-colors">web</span>
-                        <span class="font-medium text-gray-200">WordPress</span>
-                    </div>
-                    <div class="bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-orange-500/50 transition-colors group">
-                        <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-orange-500 transition-colors">commit</span>
-                        <span class="font-medium text-gray-200">Git</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-24 px-6 relative">
-            <div class="max-w-6xl mx-auto">
-                <div class="flex items-center gap-4 mb-16">
-                    <h2 class="text-3xl md:text-4xl font-bold">Featured <span class="text-gradient">Projects</span></h2>
-                    <div class="h-[1px] flex-grow bg-gradient-to-r from-purple-500/50 to-transparent"></div>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Project 1 -->
-                    <div class="card bg-surface rounded-2xl overflow-hidden border border-white/5 group flex flex-col h-full">
-                        <div class="h-2 w-full bg-gradient-to-r from-blue-400 to-blue-600"></div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400">
-                                    <span class="material-symbols-outlined text-3xl">domain</span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-3">BestBuilt Company Profile</h3>
-                            <p class="text-gray-400 mb-6 flex-grow">
-                                A responsive, modern corporate website showcasing services and portfolios to enhance digital presence and client acquisition.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">WordPress</span>
-                                <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">Bootstrap</span>
-                                <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">PHP</span>
-                            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-gray-300 text-lg leading-relaxed reveal-on-scroll">
+                    <p>
+                        Hello! I am a passionate developer currently pursuing a degree in <strong class="text-white">Information Systems</strong> at <strong class="text-white">Universitas Internasional Batam</strong>.
+                    </p>
+                    <p>
+                        Based in the vibrant city of <strong class="text-white">Batam, Indonesia</strong>, I specialize in bridging the gap between functional backend logic and engaging user interfaces. My dual focus on Full-Stack Development and QA Automation ensures that the software I build is not only feature-rich but also reliable and rigorously tested.
+                    </p>
+                    <div class="bg-surface p-6 rounded-2xl border border-white/5 mt-6">
+                        <h3 class="text-white font-semibold mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-purple-400">interests</span>
+                            When I'm not coding
+                        </h3>
+                        <p class="text-sm text-gray-400 mb-4">You can usually find me engaging in my creative hobbies:</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="flex items-center gap-2 bg-darkBg px-4 py-2 rounded-lg border border-white/5 text-sm">
+                                <span class="material-symbols-outlined text-blue-400 text-sm">music_note</span> Playing Guitar
+                            </span>
+                            <span class="flex items-center gap-2 bg-darkBg px-4 py-2 rounded-lg border border-white/5 text-sm">
+                                <span class="material-symbols-outlined text-blue-400 text-sm">queue_music</span> Playing Drums
+                            </span>
+                            <span class="flex items-center gap-2 bg-darkBg px-4 py-2 rounded-lg border border-white/5 text-sm">
+                                <span class="material-symbols-outlined text-purple-400 text-sm">photo_camera</span> Macro Photography
+                            </span>
                         </div>
                     </div>
-
-                    <!-- Project 2 -->
-                    <div class="card bg-surface rounded-2xl overflow-hidden border border-white/5 group flex flex-col h-full">
-                        <div class="h-2 w-full bg-gradient-to-r from-purple-400 to-purple-600"></div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="p-3 bg-purple-500/10 rounded-xl text-purple-400">
-                                    <span class="material-symbols-outlined text-3xl">fact_check</span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-3">Property Management QA Suites</h3>
-                            <p class="text-gray-400 mb-6 flex-grow">
-                                Automated testing workflows developed for a complex property management platform, ensuring high reliability and preventing regressions.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">Python</span>
-                                <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">Selenium</span>
-                                <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">PyTest</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Project 3 -->
-                    <div class="card bg-surface rounded-2xl overflow-hidden border border-white/5 group flex flex-col h-full">
-                        <div class="h-2 w-full bg-gradient-to-r from-green-400 to-emerald-600"></div>
-                        <div class="p-8 flex flex-col flex-grow">
-                            <div class="flex justify-between items-start mb-4">
-                                <div class="p-3 bg-green-500/10 rounded-xl text-green-400">
-                                    <span class="material-symbols-outlined text-3xl">co_present</span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-3">Smart Attendance System</h3>
-                            <p class="text-gray-400 mb-6 flex-grow">
-                                An advanced attendance tracking system utilizing PHP and face-api.js integration for quick and accurate WKO Karate member verification.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mt-auto">
-                                <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">PHP</span>
-                                <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">face-api.js</span>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-24 px-6 relative overflow-hidden">
-            <div class="absolute inset-0 bg-primary-gradient opacity-5 blur-[150px] z-0"></div>
-            <div class="max-w-3xl mx-auto text-center relative z-10 bg-surface/50 backdrop-blur-xl border border-white/10 p-10 md:p-16 rounded-3xl">
-                <span class="material-symbols-outlined text-5xl text-purple-400 mb-6">rocket_launch</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Let's Build Something <span class="text-gradient">Together</span></h2>
-                <p class="text-gray-400 text-lg mb-10">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Whether it's development or ensuring software quality, let's connect.
-                </p>
                 
-                <div class="flex flex-col sm:flex-row justify-center gap-6">
-                    <a href="mailto:contact@example.com" class="px-8 py-4 rounded-full bg-primary-gradient hover:bg-primary-gradient-hover text-white font-semibold shadow-lg shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-2">
-                        <span class="material-symbols-outlined">mail</span>
-                        Send an Email
-                    </a>
-                    <a href="https://github.com/bryanjeffersonlimnegka06-hue" target="_blank" class="px-8 py-4 rounded-full bg-darkBg border border-gray-700 hover:border-gray-500 text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2 group">
-                        <svg class="w-5 h-5 fill-current group-hover:text-blue-400 transition-colors" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        bryanjeff-ibase
-                    </a>
+                <!-- Decorative Visual for About Section -->
+                <div class="relative hidden lg:flex justify-center items-center reveal-on-scroll" style="transition-delay: 200ms;">
+                    <div class="absolute inset-0 bg-primary-gradient opacity-20 blur-[100px] rounded-full"></div>
+                    <div class="relative w-full max-w-md aspect-square bg-surface border border-white/10 rounded-3xl p-8 flex flex-col justify-center gap-6 shadow-2xl transform rotate-3">
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                                <span class="material-symbols-outlined">school</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium">Education</h4>
+                                <p class="text-sm">Universitas Internasional Batam</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium">Location</h4>
+                                <p class="text-sm">Batam, Riau Islands, Indonesia</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-gray-300">
+                            <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
+                                <span class="material-symbols-outlined">bug_report</span>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-medium">Specialty</h4>
+                                <p class="text-sm">Development & QA Automation</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+    
+        <!-- Skills Section -->
+    <section id="skills" class="py-24 px-6 bg-surface/30">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center gap-4 mb-16 justify-end reveal-on-scroll">
+                <div class="h-[1px] flex-grow bg-gradient-to-l from-blue-500/50 to-transparent"></div>
+                <h2 class="text-3xl md:text-4xl font-bold">Technical <span class="text-gradient">Skills</span></h2>
+            </div>
 
-    </main>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <!-- Skill Item 1 -->
+                <div class="card reveal-on-scroll bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-blue-500/50 transition-colors group">
+                    <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-blue-400 transition-colors">php</span>
+                    <span class="font-medium text-gray-200">PHP</span>
+                </div>
+                <!-- Skill Item 2 -->
+                <div class="card reveal-on-scroll bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-red-500/50 transition-colors group" style="transition-delay: 100ms;">
+                    <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-red-500 transition-colors">code</span>
+                    <span class="font-medium text-gray-200">Laravel</span>
+                </div>
+                <!-- Skill Item 3 -->
+                <div class="card reveal-on-scroll bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-purple-500/50 transition-colors group" style="transition-delay: 200ms;">
+                    <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-purple-500 transition-colors">css</span>
+                    <span class="font-medium text-gray-200">Bootstrap</span>
+                </div>
+                <!-- Skill Item 4 -->
+                <div class="card reveal-on-scroll bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-yellow-400/50 transition-colors group" style="transition-delay: 300ms;">
+                    <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-yellow-400 transition-colors">terminal</span>
+                    <span class="font-medium text-gray-200">Python</span>
+                </div>
+                <!-- Skill Item 5 -->
+                <div class="card reveal-on-scroll bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-green-400/50 transition-colors group">
+                    <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-green-400 transition-colors">precision_manufacturing</span>
+                    <span class="font-medium text-gray-200 text-center">Selenium WebDriver</span>
+                </div>
+                <!-- Skill Item 6 -->
+                <div class="card reveal-on-scroll bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-teal-400/50 transition-colors group" style="transition-delay: 100ms;">
+                    <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-teal-400 transition-colors">science</span>
+                    <span class="font-medium text-gray-200">PyTest</span>
+                </div>
+                <!-- Skill Item 7 -->
+                <div class="card reveal-on-scroll bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-blue-600/50 transition-colors group" style="transition-delay: 200ms;">
+                    <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-blue-600 transition-colors">web</span>
+                    <span class="font-medium text-gray-200">WordPress</span>
+                </div>
+                <!-- Skill Item 8 -->
+                <div class="card reveal-on-scroll bg-surface border border-white/5 rounded-2xl p-6 flex flex-col items-center justify-center gap-3 hover:border-orange-500/50 transition-colors group" style="transition-delay: 300ms;">
+                    <span class="material-symbols-outlined text-4xl text-gray-500 group-hover:text-orange-500 transition-colors">commit</span>
+                    <span class="font-medium text-gray-200">Git</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex items-center gap-4 mb-16 reveal-on-scroll">
+                <h2 class="text-3xl md:text-4xl font-bold">Featured <span class="text-gradient">Projects</span></h2>
+                <div class="h-[1px] flex-grow bg-gradient-to-r from-purple-500/50 to-transparent"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="card reveal-on-scroll bg-surface rounded-2xl overflow-hidden border border-white/5 group flex flex-col h-full">
+                    <div class="h-2 w-full bg-gradient-to-r from-blue-400 to-blue-600"></div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400">
+                                <span class="material-symbols-outlined text-3xl">domain</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">BestBuilt Company Profile</h3>
+                        <p class="text-gray-400 mb-6 flex-grow">
+                            A responsive, modern corporate website showcasing services and portfolios to enhance digital presence and client acquisition.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">WordPress</span>
+                            <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">Bootstrap</span>
+                            <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">PHP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="card reveal-on-scroll bg-surface rounded-2xl overflow-hidden border border-white/5 group flex flex-col h-full" style="transition-delay: 150ms;">
+                    <div class="h-2 w-full bg-gradient-to-r from-purple-400 to-purple-600"></div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 bg-purple-500/10 rounded-xl text-purple-400">
+                                <span class="material-symbols-outlined text-3xl">fact_check</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Property Management QA Suites</h3>
+                        <p class="text-gray-400 mb-6 flex-grow">
+                            Automated testing workflows developed for a complex property management platform, ensuring high reliability and preventing regressions.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">Python</span>
+                            <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">Selenium</span>
+                            <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">PyTest</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="card reveal-on-scroll bg-surface rounded-2xl overflow-hidden border border-white/5 group flex flex-col h-full" style="transition-delay: 300ms;">
+                    <div class="h-2 w-full bg-gradient-to-r from-green-400 to-emerald-600"></div>
+                    <div class="p-8 flex flex-col flex-grow">
+                        <div class="flex justify-between items-start mb-4">
+                            <div class="p-3 bg-green-500/10 rounded-xl text-green-400">
+                                <span class="material-symbols-outlined text-3xl">co_present</span>
+                            </div>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-3">Smart Attendance System</h3>
+                        <p class="text-gray-400 mb-6 flex-grow">
+                            An advanced attendance tracking system utilizing PHP and face-api.js integration for quick and accurate WKO Karate member verification.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mt-auto">
+                            <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">PHP</span>
+                            <span class="text-xs font-medium px-3 py-1 bg-darkBg border border-white/10 rounded-full text-gray-300">face-api.js</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 bg-primary-gradient opacity-5 blur-[150px] z-0"></div>
+        <div class="reveal-on-scroll max-w-3xl mx-auto text-center relative z-10 bg-surface/50 backdrop-blur-xl border border-white/10 p-10 md:p-16 rounded-3xl">
+            <span class="material-symbols-outlined text-5xl text-purple-400 mb-6">rocket_launch</span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Let's Build Something <span class="text-gradient">Together</span></h2>
+            <p class="text-gray-400 text-lg mb-10">
+                I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions. Whether it's development or ensuring software quality, let's connect.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="mailto:contact@example.com" class="px-8 py-4 rounded-full bg-primary-gradient hover:bg-primary-gradient-hover text-white font-semibold shadow-lg shadow-purple-500/25 transition-all duration-300 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined">mail</span>
+                    Send an Email
+                </a>
+                <a href="https://github.com/bryanjeffersonlimnegka06-hue" target="_blank" class="px-8 py-4 rounded-full bg-darkBg border border-gray-700 hover:border-gray-500 text-white font-semibold transition-all duration-300 flex items-center justify-center gap-2 group">
+                    <svg class="w-5 h-5 fill-current group-hover:text-blue-400 transition-colors" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    bryanjeff-ibase
+                </a>
+            </div>
+        </div>
+    </section>
+
+</main>
 
     <!-- Footer -->
     <footer class="border-t border-white/5 py-8 text-center bg-darkBg">
