@@ -1,26 +1,18 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
+tailwind.config = {
+    theme: {
+        extend: {
+            fontFamily: {
+                sans: ['Poppins', 'sans-serif'],
+            },
+            colors: {
+                darkBg: '#090a0f', // Very dark blue/gray
+                surface: '#151722', // Slightly lighter for cards
+                surfaceHover: '#1c1f2e',
+            },
+            backgroundImage: {
+                'primary-gradient': 'linear-gradient(to right, #3b82f6, #a855f7)', // Blue to Purple
+                'primary-gradient-hover': 'linear-gradient(to right, #2563eb, #9333ea)',
+            }
         }
-    });
-});
-
-// Simple reveal animation on scroll
-window.addEventListener('scroll', () => {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        const cardTop = card.getBoundingClientRect().top;
-        if (cardTop < window.innerHeight - 50) {
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
-        }
-    });
-});
+    }
+}
